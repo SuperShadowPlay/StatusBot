@@ -1,4 +1,4 @@
-#InvisibleBot Version Alpha
+# InvisibleBot Version Alpha
 
 This bot <i>should</i> be able to detect the discord status of all
 users able to be accessed by the bot.

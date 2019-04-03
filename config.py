@@ -1,12 +1,15 @@
-"""Config for StatusBot v0.1
+"""Config for StatusBot v0.1.
+
 https://github.com/SuperShadowPlay/StatusBot
 """
 
+"""KEEP THE QUOTES"""
+
 # Your bot's token
-TOKEN = 'NDQ5MzUxOTU2ODEzNzA5MzEz.XJ6HqA.R9UOPnApBBoS0O2H1dyZnQBnPZE'
+TOKEN = 'null'
 
 # What role to detect
-statusDetect = discord.Status.null
+statusDetect = 'null'
 
 # The id of the role to give/take
 ROLEID = 'null'

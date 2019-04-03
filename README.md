@@ -1,10 +1,6 @@
 # StatusBot v0.1
 #### By SuperShadowPlay
 
-## Still not done
-Implement and test all the new customizability options.
-
-
 ## Description
 This bot will detect when a user updates their status in discord, and
 depending on what status is specified, will give a role if the user switches

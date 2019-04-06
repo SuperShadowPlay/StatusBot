@@ -8,7 +8,7 @@ https://github.com/SuperShadowPlay/StatusBot
 # Your bot's token
 TOKEN = 'null'
 
-# What role to detect
+# What status to detect
 statusDetect = 'null'
 
 # The id of the role to give/take

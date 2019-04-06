@@ -104,7 +104,7 @@ async def on_ready():
     """When bot is ready it will output a message and start afterwards."""
     global preventPrematureUpdates
     preventPrematureUpdates = True
-    await client.change_presence(game=discord.Game(name='i/info for commands'))
+    await client.change_presence(game=discord.Game(name='i/info'))
     print('Logged in as {0}, ID {1} at {2}'.format(client.user.name,
                                                    client.user.id, getTime()))
     print('''Status detection set to {0}

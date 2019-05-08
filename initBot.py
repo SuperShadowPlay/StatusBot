@@ -52,25 +52,25 @@ def mathyTime():
 
 
 @client.event
-async def botStatus():
-    """Print the status of the bot every five minutes."""
+async def printStatus():
+    """Print the status of the bot every 10 minutes."""
     global preventPrematureUpdates
     await client.wait_until_ready()
     while not client.is_closed:
         if preventPrematureUpdates is True:
             print('{0} still running || {1}'.format(client.user.name,
                   getTime()))
-        await asyncio.sleep(300)
+        await asyncio.sleep(600)
 
 """
 Old method, if you're looking through the code and want to enable this
 method of detection instead, go right on ahead. I just personally like
-the more control of the bot's activities that the other method provides.
+the more control of the bot's activities that the other method provides."""
 
 @client.event
 async def on_member_update(before, after):
-    \"""Scan members and see if they are offline/invisible or not.\"""
-    if after.status == statusDetect and giveRole is True:
+    """Scan members and see if they are the specified status or not."""
+    if after.status == statusDetect:
         await client.add_roles(after, discord.Object(id=ROLEID))
     elif after.status != statusDetect and giveRole is True:
         await client.remove_roles(after, discord.Object(
@@ -80,7 +80,7 @@ async def on_member_update(before, after):
                                                     id=ROLEID))
     elif after.status != statusDetect and giveRole is False:
         await client.add_roles(after, discord.Object(id=ROLEID))
-"""
+
 
 @client.event
 async def updateStatus():
@@ -97,6 +97,16 @@ async def updateStatus():
 
 
 @client.event
+async def on_member_join(member):
+	"""Checks the newly joined member's status and acts accordingly"""
+	await client.send_message(member, '''{0} Welcome to Invisibois!
+In order to begin chatting, you need to set your status to invisible.
+
+If it isn't obvious, this chat is a general assembly of discord users
+who are always invisible. You *are* allowed to go to other statuses,
+but it is discouraged and you will not be able to chat while you are not invisible.'''.format(member.mention))
+
+@client.event
 async def on_message(message):
     """When a message is detected by the bot, this function is activated.
 
@@ -106,24 +116,17 @@ async def on_message(message):
     #Don't reply to self
     if message.author == client.user:
         return
-
-    #Get the time of the last message - used in checkStatus
-    global lastTime
-    lastTime = mathyTime()
-
-    if message.content.startswith == 'i/info':
+    if message.content == 'i/info':
         await client.send_message(message.channel, '''This bot gives a role
-        when a certain status (online, offline, idle, dnd) is detected,
-        and removes that role when that the user no
-        longer has the specified status.
-        --------------------
-        The current status being detected is {0}
-        --------------------
-        This bot is also open-source, and the source can be found at
-        `https://github.com/SuperShadowPlay/StatusBot`
-        --------------------
-        (This bot has no other user commands
-        other than this one)'''.format(statusDetect))
+when a certain status (online, offline, idle, dnd) is detected,
+and removes that role when that the user no
+longer has the specified status.
+--------------------
+This bot is also open-source, and the source can be found at
+https://github.com/SuperShadowPlay/StatusBot
+--------------------
+This bot has no other user commands
+other than this one''')
 
 
 @client.event
@@ -131,7 +134,7 @@ async def on_ready():
     """When bot is ready it will output a message and start afterwards."""
     global preventPrematureUpdates
     preventPrematureUpdates = True
-    await client.change_presence(game=discord.Game(name='i/help for commands'))
+    await client.change_presence(game=discord.Game(name='i/info'))
     print('Logged in as {0}, ID {1} at {2}'.format(client.user.name,
                                                    client.user.id, getTime()))
     print('''Status detection set to {0}

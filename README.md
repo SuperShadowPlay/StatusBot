@@ -1,20 +1,14 @@
 # StatusBot v0.1
 #### By SuperShadowPlay
 
-## To do
-
-Implement giveRole completely
-
-Make a repeating and slowing background task that sets roles.
-
-<s>Feel emotion</s>
-
-
 ## Description
 This bot will detect when a user updates their status in discord, and
 depending on what status is specified, will give a role if the user switches
 to the specified status, and will remove the role when a user switches off
 the specified status.
+
+I have not made this bot fully configurable as I would like, and plan on doing this
+someday, but for now it will stay in the half-configurable state it's in.
 
 ## config.py tutorial
 

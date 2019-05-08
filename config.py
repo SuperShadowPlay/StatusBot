@@ -8,8 +8,8 @@ https://github.com/SuperShadowPlay/StatusBot
 # Your bot's token
 TOKEN = 'NDQ5MzUxOTU2ODEzNzA5MzEz.XKWV2Q.5ojQt2Qx-zT53MBsT01RtMDhnqE'
 
-# What role to detect
-statusDetect = 'offline'
+# What status to detect
+statusDetect = 'null'
 
 # The id of the role to give/take
 ROLEID = '561632679473446931'

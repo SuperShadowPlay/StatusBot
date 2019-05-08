@@ -1,8 +1,13 @@
 # StatusBot v0.1
 #### By SuperShadowPlay
 
-## Still not done
-Implement and test all the new customizability options.
+## To do
+
+Implement giveRole completely
+
+Make a repeating and slowing background task that sets roles.
+
+<s>Feel emotion</s>
 
 
 ## Description
@@ -28,3 +33,15 @@ add/remove. In order to do this, make the role able to be mentioned,
 and then send a message in any channel that the role has access to.
 The message should be `\@<role name>` and replace `<role name>` with the
 actual name of the role.
+
+#### giveRole
+When `giveRole` is set to `True`, when the specified status is detected,
+the role will be given. Setting this value to `False` will do the opposite; when
+the specified status is detected, the role will be taken away. In both `True`
+and `False`, when the user changes away from the specified status, the role
+will be taken away or given, respectively.
+
+#### SERVERID
+To get your server ID, enable developer by going to
+Settings -> Appearance -> Developer Mode
+Then in your server list, right-click your server and click `Copy ID`.

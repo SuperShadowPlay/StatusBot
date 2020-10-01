@@ -10,6 +10,12 @@ the specified status.
 I have not made this bot fully configurable as I would like, and plan on doing this
 someday, but for now it will stay in the half-configurable state it's in.
 
+## Development Activity
+
+I have mostly ceased development of this small bot. If it is of use to you, please fork
+it and continue working on it. I just want to make it clear I am not going to be updating
+the bot in the future.
+
 ## config.py tutorial
 
 #### TOKEN
